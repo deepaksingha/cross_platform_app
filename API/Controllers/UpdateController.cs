@@ -1,4 +1,4 @@
-﻿using B2B.Model;
+using B2B.Model;
 using B2B.Service;
 using B2BOrdering.Helper;
 using B2BOrdering.Models;
@@ -240,6 +240,58 @@ namespace B2BOrdering.Controllers
 
             return rs;
         }
+        #endregion
+
+        #region LOGINUSER
+
+        [HttpPost]
+        public ResponseStatus LoginUserInsert([FromBody] LoginUser login)
+        {
+
+            bool flag = false;
+            ResponseStatus rs = new ResponseStatus();
+
+            try
+            {
+                ContentFetch cf = new ContentFetch();
+                ContentUpdate cu = new ContentUpdate();
+
+                login.TenantID = SiteUtil.Tenant;
+                login.IsActive = SiteUtil.ACTIVE_TEXT;
+
+                login.CreatedDate = DateTime.Now;
+                login.UpdatedDate = DateTime.Now;
+                login.LastLogin = DateTime.Now;
+                login.LastPasswrdChgedDate = DateTime.Now;
+
+                cu.LoginUserInsert(login, SiteUtil.SecureCode);
+
+                flag = true;
+
+                if (flag)
+                {
+                    rs.responseCode = B2BConstants.RESPONSE_CODE_SUCCESS;
+                    rs.responseMessage = B2BConstants.RESPONSE_MESSAGE_SUCCESS;
+                }
+                else
+                {
+                    rs.responseCode = B2BConstants.RESPONSE_CODE_ERROR;
+                    rs.responseMessage = B2BConstants.RESPONSE_MESSAGE_ERROR;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                rs.responseCode = B2BConstants.RESPONSE_CODE_ERROR;
+                rs.responseMessage = ex.Message;
+
+            }
+
+            return rs;
+        }
+
         #endregion
 
     }
