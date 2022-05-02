@@ -1,4 +1,4 @@
-﻿using B2B.Model;
+using B2B.Model;
 using B2B.Service;
 using B2BOrdering.Helper;
 using B2BOrdering.Models;
@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 
 namespace B2BOrdering.Controllers
@@ -51,6 +53,41 @@ namespace B2BOrdering.Controllers
 
 
         }
+        public LoginUserList GetLoginUserList(int orgID)
+        {
+            LoginUserList lscustomer = new LoginUserList();
+
+            ContentFetch cf = new ContentFetch();
+
+            try
+            {
+                List<LoginUser> list = cf.LoginUserSelectAll(SiteUtil.Tenant, SiteUtil.SecureCode).Where(d => d.IsActive == SiteUtil.ACTIVE_TEXT && d.CustomerType == SiteUtil.CUSTOMER_TYPE).ToList();
+
+                var filter = list;
+
+
+                if (orgID != 0)
+                {
+                    filter = filter.Where(d => d.OrgID == orgID).ToList();
+                }
+
+                LoginUserList pLists = new LoginUserList();
+                pLists.responseResult = filter.ToList();
+                pLists.count = filter.ToList().Count;
+                pLists.responseCode = B2BConstants.RESPONSE_CODE_SUCCESS;
+                pLists.responseMessage = B2BConstants.RESPONSE_MESSAGE_SUCCESS;
+                lscustomer = pLists;
+
+            }
+            catch (Exception e)
+            {
+                lscustomer.responseCode = B2BConstants.RESPONSE_CODE_ERROR;
+                lscustomer.responseMessage = B2BConstants.RESPONSE_MESSAGE_ERROR + e.Message;
+            }
+
+            return lscustomer;
+        }
+
 
         #endregion
 
