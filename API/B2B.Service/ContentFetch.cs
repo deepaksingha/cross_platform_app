@@ -91,28 +91,7 @@ namespace B2B.Service
 
 
        
-        public ModuleMaster ModuleMasterSelect(int moduleID, int tenantID, string secureCode)
-        {
-
-            
-                
-
-            ModuleMasterDA obj = new ModuleMasterDA("ConnectionString");
-            return obj.Select(moduleID, tenantID);
-        }
-
-
        
-        public List<ModuleMaster> ModuleMasterSelectAll(int tenantID, string secureCode)
-        {
-
-            
-                
-
-            ModuleMasterDA obj = new ModuleMasterDA("ConnectionString");
-            return obj.SelectAll(tenantID);
-        }
-
 
 
        
@@ -238,30 +217,7 @@ namespace B2B.Service
 
 
        
-        public RoleMenuMapping RoleMenuMappingSelect(int mappingID, int tenantID, string secureCode)
-        {
-
-            
-                
-
-            RoleMenuMappingDA obj = new RoleMenuMappingDA("ConnectionString");
-            return obj.Select(mappingID, tenantID);
-        }
-
-
        
-        public List<RoleMenuMapping> RoleMenuMappingSelectAll(int tenantID, string secureCode)
-        {
-
-            
-                
-
-            RoleMenuMappingDA obj = new RoleMenuMappingDA("ConnectionString");
-            return obj.SelectAll(tenantID);
-        }
-
-
-
 
        
         public List<StatusCodeMaster> StatusCodeMasterSelectAll(int tenantID, string secureCode)
