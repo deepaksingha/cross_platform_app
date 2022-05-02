@@ -11,75 +11,7 @@ namespace B2B.Service
     public class ContentUpdate
     {
         
-        public int FuctionalityMasterInsert(FuctionalityMaster fuctionalityMaster, string secureCode)
-        {
-
-           
-               
-
-            FuctionalityMasterDA obj = new FuctionalityMasterDA("ConnectionString");
-            return obj.Insert(fuctionalityMaster);
-        }
-
-
-        
-        public int FuctionalityMasterUpdate(FuctionalityMaster fuctionalityMaster, string secureCode)
-        {
-
-           
-               
-
-            FuctionalityMasterDA obj = new FuctionalityMasterDA("ConnectionString");
-            return obj.Update(fuctionalityMaster);
-        }
-
-
-        public int FuctionalityMasterDelete(int funcID, int tenantID, string secureCode)
-        {
-
-            
-               
-
-            FuctionalityMasterDA obj = new FuctionalityMasterDA("ConnectionString");
-            return obj.Delete(funcID, tenantID);
-        }
-
-
-
-        
-        public int FuncRoleAccessInsert(FuncRoleAccess funcRoleAccess, string secureCode)
-        {
-
-           
-               
-
-            FuncRoleAccessDA obj = new FuncRoleAccessDA("ConnectionString");
-            return obj.Insert(funcRoleAccess);
-        }
-
-
-        
-        public int FuncRoleAccessUpdate(FuncRoleAccess funcRoleAccess, string secureCode)
-        {
-
-               
-
-            FuncRoleAccessDA obj = new FuncRoleAccessDA("ConnectionString");
-            return obj.Update(funcRoleAccess);
-        }
-
-
-        public int FuncRoleAccessDelete(int accessID, int tenantID, string secureCode)
-        {
-
-            
-               
-
-            FuncRoleAccessDA obj = new FuncRoleAccessDA("ConnectionString");
-            return obj.Delete(accessID, tenantID);
-        }
-
-
+       
 
         
         public int ItemCatMasterInsert(ItemCatMaster itemCatMaster, string secureCode)
@@ -190,38 +122,7 @@ namespace B2B.Service
 
 
         
-        public int ModuleMasterInsert(ModuleMaster moduleMaster, string secureCode)
-        {
-
-           
-               
-
-            ModuleMasterDA obj = new ModuleMasterDA("ConnectionString");
-            return obj.Insert(moduleMaster);
-        }
-
-
-        
-        public int ModuleMasterUpdate(ModuleMaster moduleMaster, string secureCode)
-        {
-
-           
-               
-
-            ModuleMasterDA obj = new ModuleMasterDA("ConnectionString");
-            return obj.Update(moduleMaster);
-        }
-
-
-        public int ModuleMasterDelete(int moduleID, int tenantID, string secureCode)
-        {
-
-            
-               
-
-            ModuleMasterDA obj = new ModuleMasterDA("ConnectionString");
-            return obj.Delete(moduleID, tenantID);
-        }
+     
 
 
 
@@ -389,41 +290,6 @@ namespace B2B.Service
 
 
         
-        public int RoleMenuMappingInsert(RoleMenuMapping roleMenuMapping, string secureCode)
-        {
-
-           
-               
-
-            RoleMenuMappingDA obj = new RoleMenuMappingDA("ConnectionString");
-            return obj.Insert(roleMenuMapping);
-        }
-
-
-        
-        public int RoleMenuMappingUpdate(RoleMenuMapping roleMenuMapping, string secureCode)
-        {
-
-           
-               
-
-            RoleMenuMappingDA obj = new RoleMenuMappingDA("ConnectionString");
-            return obj.Update(roleMenuMapping);
-        }
-
-
-        public int RoleMenuMappingDelete(int mappingID, int tenantID, string secureCode)
-        {
-
-            
-               
-
-            RoleMenuMappingDA obj = new RoleMenuMappingDA("ConnectionString");
-            return obj.Delete(mappingID, tenantID);
-        }
-
-
-
         
         public int StatusCodeMasterInsert(StatusCodeMaster statusCodeMaster, string secureCode)
         {
