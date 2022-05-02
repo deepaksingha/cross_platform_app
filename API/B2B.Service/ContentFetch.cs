@@ -12,53 +12,7 @@ namespace B2B.Service
     public class ContentFetch
     {
        
-        public FuctionalityMaster FuctionalityMasterSelect(int funcID, int tenantID, string secureCode)
-        {
-
-            
-                
-
-            FuctionalityMasterDA obj = new FuctionalityMasterDA("ConnectionString");
-            return obj.Select(funcID, tenantID);
-        }
-
-
-       
-        public List<FuctionalityMaster> FuctionalityMasterSelectAll(int tenantID, string secureCode)
-        {
-
-            
-                
-
-            FuctionalityMasterDA obj = new FuctionalityMasterDA("ConnectionString");
-            return obj.SelectAll(tenantID);
-        }
-
-
-
-       
-        public FuncRoleAccess FuncRoleAccessSelect(int accessID, int tenantID, string secureCode)
-        {
-
-            
-                
-
-            FuncRoleAccessDA obj = new FuncRoleAccessDA("ConnectionString");
-            return obj.Select(accessID, tenantID);
-        }
-
-
-       
-        public List<FuncRoleAccess> FuncRoleAccessSelectAll(int tenantID, string secureCode)
-        {
-
-            
-                
-
-            FuncRoleAccessDA obj = new FuncRoleAccessDA("ConnectionString");
-            return obj.SelectAll(tenantID);
-        }
-
+        
 
 
        
